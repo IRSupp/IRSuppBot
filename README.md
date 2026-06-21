@@ -9,6 +9,31 @@
 
 ---
 
+## ۰) نصب از صفر (روی سرور تازه)
+
+**پیش‌نیاز:** سرور Ubuntu 22.04 یا 24.04، دسترسی root، اتصال اینترنت.
+
+نصب با یک دستور (اسکریپت را دانلود و اجرا می‌کند):
+```bash
+curl -fsSL https://raw.githubusercontent.com/IRSupp/IRSuppBot/main/install.sh -o install.sh && bash install.sh
+```
+
+اسکریپت این اطلاعات را می‌پرسد:
+- **Bot token** — توکن ربات از BotFather
+- **Admin numeric ID(s)** — آیدی عددی ادمین (چند تا با کاما)
+- **License key** — کلید لایسنس
+- **Channel ID** — اختیاری (Enter = رد)
+- **ZarinPal key** — اختیاری (Enter = رد)
+- **Version to install** — Enter بزن = آخرین نسخه (latest)
+
+بقیه خودکار انجام می‌شود: نصب Docker، ساخت `.env` و `docker-compose.yml` و `update.sh`، کشیدن image، و بالا آوردن ربات و دیتابیس.
+
+در پایان پیام `Done! Installation complete` می‌آید. حالا در تلگرام `/start` بزن.
+
+> 💡 اگر Docker تازه نصب شد و وسط کار خطای permission دیدی، یک‌بار از سرور خارج شو و دوباره وصل شو (یا `newgrp docker` بزن)، بعد دوباره `bash install.sh`.
+
+---
+
 ## ۱) وضعیت: ربات بالا هست یا نه؟
 
 ```bash
